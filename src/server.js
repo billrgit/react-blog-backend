@@ -107,6 +107,10 @@ app.post('/api/articles/:name/add-comment', async (req, res) => {
 //	res.status(200).send(articlesInfo[articleName]);
 });
 
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, '/build/index.html'));
+});
+
 app.listen(8000, () => {
 	console.log('Server is listening on port 8000')
 });
